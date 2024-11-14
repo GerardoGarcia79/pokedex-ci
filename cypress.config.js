@@ -7,7 +7,7 @@ module.exports = defineConfig({
     setupNodeEvents(on, config) {
       // implement node event listeners here, if needed
     },
-    baseUrl: 'http://localhost:8080', // Replace with your actual base URL
+    baseUrl: 'http://localhost:5000', // Replace with your actual base URL
     supportFile: false,               // Disable the support file
   },
 })
