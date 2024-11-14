@@ -18,8 +18,8 @@ jobs:
       - name: Install dependencies
         run: |
           npm install --no-audit --no-fund --no-optional
-          npm update webpack
-          npx browserslist@latest --update-db
+          npm update webpack --no-audit --no-fund --no-optional
+          npx browserslist@latest --update-db --no-audit --no-fund --no-optional
       - name: Lint
         run: npm run eslint
       - name: Build project
