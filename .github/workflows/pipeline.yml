@@ -20,11 +20,9 @@ jobs:
           npm install --no-audit --no-fund --no-optional
           npm update webpack
           npx browserslist@latest --update-db
-      - name: Set legacy OpenSSL provider
-        run: echo "NODE_OPTIONS=--openssl-legacy-provider" >> $GITHUB_ENV
       - name: Lint
         run: npm run eslint
-      - name: Build
-        run: npm run build
+      - name: Build project
+        run: NODE_OPTIONS=--openssl-legacy-provider npm run build
       - name: Test
         run: npm test
