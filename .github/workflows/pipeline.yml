@@ -17,7 +17,7 @@ jobs:
           node-version: latest
       - name: Install dependencies
         run: |
-          npm install --no-audit --no-fund --no-optional
+          npm ci
           npm update webpack --no-audit --no-fund --no-optional
           npx browserslist@latest --update-db --no-audit --no-fund --no-optional
           npm install --save-dev cross-env
