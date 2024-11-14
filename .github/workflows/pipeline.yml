@@ -20,9 +20,17 @@ jobs:
           npm install --no-audit --no-fund --no-optional
           npm update webpack --no-audit --no-fund --no-optional
           npx browserslist@latest --update-db --no-audit --no-fund --no-optional
+          npm install --save-dev cross-env
+          npm install cypress --save-dev
       - name: Lint
         run: npm run eslint
       - name: Build project
         run: NODE_OPTIONS=--openssl-legacy-provider npm run build
       - name: Test
         run: npm test
+      - name: E2E tests
+        uses: cypress-io/github-action@v6
+        with:
+          command: npm run test:e2e
+          start: npm run start-test
+          wait-on: http://localhost:5000
