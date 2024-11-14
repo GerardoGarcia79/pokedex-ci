@@ -17,8 +17,12 @@ jobs:
           node-version: latest
       - name: Install dependencies
         run: |
-          npm install
+          npm install --no-audit --no-fund --no-optional
           npm update webpack
           npx browserslist@latest --update-db
       - name: Lint
         run: npm run eslint
+      - name: Build
+        run: npm run build
+      - name: Test
+        run: npm test
