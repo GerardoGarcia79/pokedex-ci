@@ -110,6 +110,7 @@ jobs:
           wait-on: http://localhost:5000
 
   deploy:
+    needs: [lint, build]
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
